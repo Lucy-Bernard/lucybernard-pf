@@ -1,6 +1,5 @@
 import { Link } from "react-router";
-
-const profileImage = "src/assets/lucy.png";
+import profileImage from "../../assets/lucy.png";
 
 export default function Dashboard() {
   const featuredProjects = [

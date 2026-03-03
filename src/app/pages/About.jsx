@@ -1,4 +1,7 @@
 import { Link } from "react-router";
+import lucyOllieAlanImg from "../../assets/lucyOllieAlan-removebg.png";
+import danceFriendsImg from "../../assets/danceFriends.jpg";
+import ollieImg from "../../assets/ollie.png";
 
 export default function About() {
   return (
@@ -37,7 +40,7 @@ export default function About() {
         </div>
         <div className="about-hero-image-wrap">
           <img
-            src="src/assets/lucyOllieAlan-removebg.png"
+            src={lucyOllieAlanImg}
             alt="Lucy Alan and Ollie Drawing"
             className="about-hero-img"
           />
@@ -69,7 +72,7 @@ export default function About() {
             </div>
             <div className="about-story-img-block ">
               <img
-                src="src/assets/danceFriends.jpg"
+                src={danceFriendsImg}
                 alt="Working together"
                 className="about-story-img"
               />
@@ -148,7 +151,7 @@ export default function About() {
           <div className="about-ollie-layout">
             <div className="about-ollie-img-wrap">
               <img
-                src="src/assets/ollie.png"
+                src={ollieImg}
                 alt="Ollie the cat"
                 className="about-ollie-img "
               />
