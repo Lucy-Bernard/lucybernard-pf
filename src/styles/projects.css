@@ -1,0 +1,639 @@
+/* ════════════════════════════════════
+   PROJECTS PAGE STYLES
+   ════════════════════════════════════ */
+
+/* ════════════════════════════════════
+   HERO
+   ════════════════════════════════════ */
+.hero {
+  padding: 128px 64px 72px;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 40px;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.eyebrow-line {
+  width: 28px;
+  height: 1px;
+  background: var(--sage);
+}
+.eyebrow-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.hero-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(44px, 7vw, 84px);
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--sage-dim);
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 520px;
+  line-height: 1.8;
+}
+
+.hero-count {
+  text-align: right;
+}
+
+.hero-count-num {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--paper-deep);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.hero-count-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ════════════════════════════════════
+   FILTER BAR
+   ════════════════════════════════════ */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 64px;
+  border-bottom: 1px solid var(--border);
+  background: var(--paper-dark);
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-right: 8px;
+}
+
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: var(--sage-pale);
+  color: var(--sage-dim);
+}
+
+.filter-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+/* ════════════════════════════════════
+   PROJECTS GRID
+   ════════════════════════════════════ */
+.projects-wrapper {
+  padding: 64px 64px 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  background: var(--border-soft);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* ════════════════════════════════════
+   PROJECT CARD
+   ════════════════════════════════════ */
+.project-card {
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s var(--ease);
+  min-height: 380px;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  background: var(--paper-dark);
+  box-shadow: inset 0 0 0 1px var(--sage-pale);
+}
+
+/* Accent bar on top — each project gets its own color */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.card--plantid::before {
+  background: #b8878a;
+}
+.card--g8::before {
+  background: #c4a8b8;
+}
+.card--farmart::before {
+  background: #b8878a;
+}
+.card--zensurf::before {
+  background: #5a9bbf;
+}
+
+/* Arrow indicator — slides in on hover */
+.card-arrow {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition:
+    opacity 0.25s,
+    transform 0.25s var(--ease);
+  background: var(--paper-deep);
+}
+
+.project-card:hover .card-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.card-arrow svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: var(--ink-soft);
+  stroke-width: 1.5;
+}
+
+/* Card content */
+.card-body {
+  padding: 40px 36px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-index {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.card-subtitle {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin-bottom: 20px;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  flex: 1;
+  margin-bottom: 28px;
+}
+
+/* Tags */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.card-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+
+.card-tag.t-primary {
+  border-color: var(--sage-pale);
+  color: var(--sage-dim);
+  background: var(--sage-mist);
+}
+.card-tag.t-secondary {
+  border-color: var(--border);
+  color: var(--ink-muted);
+  background: var(--paper-dark);
+}
+.card-tag.t-accent {
+  border-color: var(--rust-pale);
+  color: var(--rust);
+  background: rgba(122, 154, 114, 0.06);
+}
+
+/* Card footer */
+.card-footer {
+  padding: 18px 36px;
+  border-top: 1px solid var(--border-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--paper-dark);
+  transition: background 0.25s;
+}
+
+.project-card:hover .card-footer {
+  background: var(--paper-deep);
+}
+
+.card-footer-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.card-view-link {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage-dim);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+
+.project-card:hover .card-view-link {
+  gap: 10px;
+}
+
+/* ════════════════════════════════════
+   FEATURED CARD (full width)
+   ════════════════════════════════════ */
+.project-card.featured {
+  grid-column: span 2;
+  flex-direction: row;
+  min-height: 280px;
+}
+
+.project-card.featured .card-body {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 48px;
+  padding: 44px 48px 40px;
+}
+
+.featured-left {
+  flex: 1;
+}
+.featured-right {
+  flex: 0 0 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.featured-badge {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid var(--sage-pale);
+  color: var(--sage-dim);
+  background: var(--sage-mist);
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.featured-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--border-soft);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.feat-metric {
+  background: var(--paper);
+  padding: 14px 16px;
+  transition: background 0.2s;
+}
+
+.project-card:hover .feat-metric {
+  background: var(--paper-dark);
+}
+
+.feat-metric-val {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.feat-metric-label {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.project-card.featured .card-footer {
+  border-top: none;
+  border-left: 1px solid var(--border-soft);
+  padding: 28px 36px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--paper-dark);
+}
+
+.project-card.featured:hover .card-footer {
+  background: var(--paper-deep);
+}
+
+/* ════════════════════════════════════
+   ALSO SECTION (GitHub + Academic)
+   ════════════════════════════════════ */
+.also-section {
+  padding: 0 64px 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.also-title {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.also-title::after {
+  content: "";
+  flex: 1;
+  max-width: 40px;
+  height: 1px;
+  background: var(--border);
+}
+
+.also-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border-soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.also-card {
+  background: var(--paper-dark);
+  padding: 28px 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s;
+  display: block;
+}
+
+.also-card:hover {
+  background: var(--paper-deep);
+}
+
+.also-card-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 10px;
+}
+
+.also-card-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.also-card-desc {
+  font-size: 12px;
+  color: var(--ink-muted);
+  line-height: 1.65;
+}
+
+/* ════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════ */
+.projects-footer {
+  background: var(--dark-bg);
+  padding: 24px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-name {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--paper-deep);
+}
+
+.footer-meta {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6a6858;
+}
+
+/* ════════════════════════════════════
+   ANIMATIONS
+   ════════════════════════════════════ */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-d1 {
+  transition-delay: 0.1s;
+}
+.reveal-d2 {
+  transition-delay: 0.2s;
+}
+.reveal-d3 {
+  transition-delay: 0.3s;
+}
+.reveal-d4 {
+  transition-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hidden class for filter */
+.project-card.hidden {
+  display: none;
+}
+
+/* No results message */
+.no-results {
+  padding: 64px 0;
+  text-align: center;
+}
+
+.no-results-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 100px 24px 56px;
+  }
+  .hero-count {
+    text-align: left;
+  }
+  .filter-bar {
+    padding: 16px 24px;
+  }
+  .projects-wrapper {
+    padding: 40px 24px 80px;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card.featured {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+  .project-card.featured .card-body {
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 28px;
+  }
+  .featured-right {
+    flex: none;
+  }
+  .also-section {
+    padding: 0 24px 80px;
+  }
+  .also-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-footer {
+    padding: 20px 24px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
