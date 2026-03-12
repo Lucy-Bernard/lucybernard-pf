@@ -1,17 +1,35 @@
 import { useState } from "react";
 
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+    setStatus("loading");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const handleChange = (e) => {
@@ -90,9 +108,26 @@ export default function Contact() {
                 />
               </div>
 
-              <button type="submit" className="contact-form-submit">
-                <i className="fa-solid fa-paper-plane"></i>
-                Send Message
+              {status === "success" && (
+                <p className="contact-form-success">
+                  Message sent! I'll get back to you soon.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="contact-form-error">
+                  Something went wrong. Please try emailing me directly.
+                </p>
+              )}
+
+              <button
+                type="submit"
+                className="contact-form-submit"
+                disabled={status === "loading"}
+              >
+                <i
+                  className={`fa-solid ${status === "loading" ? "fa-spinner fa-spin" : "fa-paper-plane"}`}
+                ></i>
+                {status === "loading" ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>

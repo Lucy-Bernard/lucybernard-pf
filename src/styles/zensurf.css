@@ -647,6 +647,7 @@ html {
 }
 
 .zf-cta-section::before {
+  pointer-events: none;
   content: "";
   position: absolute;
   bottom: -80px;

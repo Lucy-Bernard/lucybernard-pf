@@ -421,7 +421,12 @@ export default function ZenSurfShowcase() {
           </h2>
           <p className="zf-cta-tagline">Have Questions?</p>
           <div className="zf-cta-buttons">
-            <a href="https://github.com" className="zf-btn zf-btn-primary">
+            <a
+              href="https://github.com/Lucy-Bernard/ZenSurf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="zf-btn zf-btn-primary"
+            >
               View on GitHub ↗
             </a>
             <Link to="/contact" className="zf-btn zf-btn-outline">

@@ -527,6 +527,7 @@ export default function PlantIDShowcase() {
         <div className="plantid-cta-buttons">
           <a
             href="https://github.com/Lucy-Bernard/plantId"
+            target="_blank"
             className="plantid-btn plantid-btn-primary"
           >
             View on GitHub ↗

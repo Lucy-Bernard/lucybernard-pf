@@ -133,7 +133,9 @@ export default function G8Showcase() {
             </div>
             <div className="g8-features-grid">
               <div className="g8-feature-card">
-                <span className="g8-feature-icon">🛒</span>
+                <span className="g8-feature-icon">
+                  <i className="fa-solid fa-cart-shopping"></i>
+                </span>
                 <div className="g8-feature-title">Cart Management</div>
                 <p className="g8-feature-desc">
                   Per-user cart persistence via database. Real-time quantity
@@ -142,7 +144,9 @@ export default function G8Showcase() {
                 </p>
               </div>
               <div className="g8-feature-card">
-                <span className="g8-feature-icon">🔐</span>
+                <span className="g8-feature-icon">
+                  <i className="fa-brands fa-expeditedssl"></i>
+                </span>
                 <div className="g8-feature-title">Auth & Login</div>
                 <p className="g8-feature-desc">
                   Email/password auth with SQL injection prevention using string
@@ -151,7 +155,9 @@ export default function G8Showcase() {
                 </p>
               </div>
               <div className="g8-feature-card">
-                <span className="g8-feature-icon">💳</span>
+                <span className="g8-feature-icon">
+                  <i className="fa-solid fa-credit-card"></i>
+                </span>
                 <div className="g8-feature-title">Checkout Flow</div>
                 <p className="g8-feature-desc">
                   Card validation via regular expressions. Order summary with
@@ -160,7 +166,9 @@ export default function G8Showcase() {
                 </p>
               </div>
               <div className="g8-feature-card">
-                <span className="g8-feature-icon">🔍</span>
+                <span className="g8-feature-icon">
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                </span>
                 <div className="g8-feature-title">Product Search</div>
                 <p className="g8-feature-desc">
                   Live search across the product catalog. Product controller
