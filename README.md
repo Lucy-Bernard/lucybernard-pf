@@ -135,4 +135,4 @@ No overthinking, just iteration.
 
 ---
 
-**Deployed on Vercel** — [Live Here](https://lucy-portfolio.vercel.app)
+**Deployed on Vercel** — [Live Here](https://lucybernard-pf.vercel.app/)
