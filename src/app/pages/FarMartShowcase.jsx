@@ -37,7 +37,7 @@ export default function FarMartShowcase() {
             <div className="hero-eyebrow">
               <div className="eyebrow-line"></div>
               <span className="eyebrow-text">
-                Java · SQL · OOP · Data Structures · UNL CS
+                Java · MySQL · OOP · Data Structures · UNL CS
               </span>
             </div>
             <h1 className="hero-title flex">
@@ -52,7 +52,7 @@ export default function FarMartShowcase() {
             </p>
             <div className="hero-meta">
               <span className="meta-chip sage">Java</span>
-              <span className="meta-chip sage">SQL / JDBC</span>
+              <span className="meta-chip sage">MySQL + SQL / JDBC</span>
               <span className="meta-chip sage">JSON / Gson</span>
               <span className="meta-chip paper">OOP Design</span>
               <span className="meta-chip paper">UML</span>
@@ -195,14 +195,14 @@ export default function FarMartShowcase() {
               </div>
               <div className="phase-card reveal reveal-d3">
                 <div className="phase-num">Phase 03</div>
-                <div className="phase-title">SQL Database Design</div>
+                <div className="phase-title">MySQL Database Design</div>
                 <p className="phase-body">
                   Designs and implements the RDBMS to back the application.
                   Produces an ER diagram showing tables and relations,
                   conforming to 3NF for data integrity.
                 </p>
                 <div className="phase-tags">
-                  <span className="phase-tag">SQL</span>
+                  <span className="phase-tag">MySQL</span>
                   <span className="phase-tag">ER Diagram</span>
                   <span className="phase-tag">3NF</span>
                 </div>
@@ -487,20 +487,20 @@ export default function FarMartShowcase() {
                     SQL Exception Handling
                   </div>
                   <p className="db-principle-body">
-                    The API guards against SQL exceptions and runtime crashes,
-                    validates data types and null values, and checks for
-                    duplicate keys before insertion operations.
+                    The API guards against SQL exceptions (via JDBC), validates
+                    data types and null values, and checks for duplicate keys
+                    before insertion operations.
                   </p>
                 </div>
                 <div className="db-principle">
                   <div className="db-principle-title">
-                    Testing via SQL Inserts
+                    Testing via SQL INSERTs
                   </div>
                   <p className="db-principle-body">
                     Database accuracy is verified by manually inserting data
-                    through SQL queries, validating person records, store
-                    details, item data, invoice records, and invoice-item
-                    relationships.
+                    through SQL queries against MySQL, validating person
+                    records, store details, item data, invoice records, and
+                    invoice-item relationships.
                   </p>
                 </div>
               </div>
@@ -694,10 +694,12 @@ export default function FarMartShowcase() {
               </div>
               <div className="test-card reveal reveal-d2">
                 <div className="test-card-num">02 — Database</div>
-                <div className="test-card-title">SQL Insert Testing</div>
+                <div className="test-card-title">
+                  SQL Insert Testing (MySQL)
+                </div>
                 <p className="test-card-body">
-                  Manual SQL queries verify that data is correctly stored and
-                  managed across all tables and relationships.
+                  Manual SQL queries against MySQL verify that data is correctly
+                  stored and managed across all tables and relationships.
                 </p>
                 <ul className="test-card-items">
                   <li>Remove records → test data loading resilience</li>
@@ -850,7 +852,7 @@ export default function FarMartShowcase() {
         <footer>
           <div className="footer-name">Lucy Bernard</div>
           <div className="footer-meta">
-            FarMarT · UNL CS&amp;E · Java · SQL · v6.0 · 2023
+            FarMarT · UNL CS&amp;E · Java · MySQL · v6.0 · 2023
           </div>
         </footer>
       </div>

@@ -80,13 +80,13 @@ export const projects = [
     description:
       "A database-backed sales management system for farm equipment business",
     image: "src/assets/farm.png",
-    tags: ["Java", "SQL", "JDBC", "JSON", "OOP"],
+    tags: ["Java", "MySQL", "SQL", "JDBC", "JSON", "OOP"],
     fullDescription:
       "A comprehensive sales management subsystem for FarMarT, a regional farm equipment business, featuring database-backed tracking, custom data structures, and automated report generation with complex tax calculations.",
     challenge:
       "Modernizing a legacy farm equipment sales system to efficiently track sales across multiple stores, handle complex tax calculations for different product types, generate detailed reports, and maintain data integrity while ensuring scalability.",
     solution:
-      "Developed a 6-phase system following OOP and RDBMS principles. Phase 1: Built CSV to JSON data conversion using Gson library for platform-independent data exchange. Phase 2: Designed Java classes for sales report generation (all sales, store summaries, individual invoices). Phase 3: Created SQL database with ER diagrams following 3NF for data integrity. Phase 4-5: Implemented JDBC integration replacing flat files with database persistence, using factory methods for object retrieval. Phase 6: Designed custom generic linked list data structure for invoice sorting by customer name, value, or store. Implemented comprehensive tax logic (7.15% sales tax for products, 3.45% service tax, tiered equipment lease tax). Created API with SQL exception handling, data validation, and null value management.",
+      "Developed a 6-phase system following OOP and RDBMS principles. Phase 1: Built CSV to JSON data conversion using Gson library for platform-independent data exchange. Phase 2: Designed Java classes for sales report generation (all sales, store summaries, individual invoices). Phase 3: Created a MySQL database with ER diagrams following 3NF for data integrity. Phase 4-5: Implemented JDBC integration replacing flat files with database persistence, using factory methods for object retrieval and SQL queries. Phase 6: Designed custom generic linked list data structure for invoice sorting by customer name, value, or store. Implemented comprehensive tax logic (7.15% sales tax for products, 3.45% service tax, tiered equipment lease tax). Created API with SQL exception handling, data validation, and null value management.",
     results: [
       "Efficient data management replacing legacy flat files",
       "Custom linked list implementation for flexible invoice sorting",
@@ -95,6 +95,7 @@ export const projects = [
     ],
     technologies: [
       "Java",
+      "MySQL",
       "SQL",
       "JDBC",
       "JSON",

@@ -61,10 +61,10 @@ export default function Projects() {
       title: "FarMarT",
       subtitle: "Sales system design",
       description:
-        "A database-backed sales subsystem for a regional farm equipment chain, built in 6 phases from CSV parsing to JDBC integration. Features a custom generic Linked List data structure with Comparator-based sorting, a 3NF-normalized SQL schema, and formatted terminal sales reports.",
+        "A database-backed sales subsystem for a regional farm equipment chain, built in 6 phases from CSV parsing to JDBC integration. Features a custom generic Linked List data structure with Comparator-based sorting, a 3NF-normalized MySQL schema, and SQL queries through JDBC for formatted terminal sales reports.",
       tags: [
         { label: "Java", type: "t-primary" },
-        { label: "SQL / JDBC", type: "t-primary" },
+        { label: "MySQL + SQL / JDBC", type: "t-primary" },
         { label: "JSON / Gson", type: "t-secondary" },
         { label: "OOP Design", type: "t-secondary" },
         { label: "UNL · 2023", type: "t-accent" },
