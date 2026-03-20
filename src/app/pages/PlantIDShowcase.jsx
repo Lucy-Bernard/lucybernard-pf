@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import { useEffect } from "react";
-
 export default function PlantIDShowcase() {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -13,12 +12,9 @@ export default function PlantIDShowcase() {
       },
       { threshold: 0.1 },
     );
-
     document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
-
     return () => observer.disconnect();
   }, []);
-
   return (
     <div className="plantid-showcase">
       {/* Hero Section */}
@@ -28,11 +24,9 @@ export default function PlantIDShowcase() {
             Back to Portfolio
           </Link>
           <div>
-            <div className="plantid-hero-tag">
-              Case Study · Full-Stack Application
-            </div>
+            <div className="plantid-hero-tag">Full-Stack Application</div>
             <h1 className="plantid-hero-title">
-              Plant<em>ID</em>
+              Leaf<em>Line</em>
             </h1>
             <p className="plantid-hero-subtitle">
               An AI-powered plant diagnostic platform featuring an autonomous
@@ -55,7 +49,6 @@ export default function PlantIDShowcase() {
             </div>
           </div>
         </div>
-
         <div className="plantid-hero-right">
           <div>
             <div className="plantid-stack-group-label">Backend</div>
@@ -74,7 +67,6 @@ export default function PlantIDShowcase() {
               </span>
             </div>
           </div>
-
           <div>
             <div className="plantid-stack-group-label">Frontend</div>
             <div className="plantid-stack-group">
@@ -92,7 +84,6 @@ export default function PlantIDShowcase() {
               </span>
             </div>
           </div>
-
           <div>
             <div className="plantid-stack-group-label">Infrastructure</div>
             <div className="plantid-stack-group">
@@ -103,14 +94,16 @@ export default function PlantIDShowcase() {
                 <span className="plantid-stack-dot"></span>Supabase
               </span>
               <span className="plantid-stack-pill cloud">
-                <span className="plantid-stack-dot"></span>Heroku
+                <span className="plantid-stack-dot"></span>Vercel
+              </span>
+              <span className="plantid-stack-pill cloud">
+                <span className="plantid-stack-dot"></span>Render
               </span>
               <span className="plantid-stack-pill cloud">
                 <span className="plantid-stack-dot"></span>OpenRouter LLM
               </span>
             </div>
           </div>
-
           <div>
             <div className="plantid-stack-group-label">
               Validation & Quality
@@ -129,7 +122,6 @@ export default function PlantIDShowcase() {
           </div>
         </div>
       </section>
-
       {/* Impact Strip */}
       <div className="plantid-impact-strip">
         <div className="plantid-impact-stat">
@@ -149,13 +141,33 @@ export default function PlantIDShowcase() {
           <span className="plantid-impact-label">Sandboxed Execution</span>
         </div>
       </div>
-
       <div className="plantid-divider"></div>
-
+      {/* Origin Section */}
+      <section className="plantid-kernel-section">
+        <div className="plantid-section">
+          <div className="plantid-section-label fade-up">The Problem</div>
+          <h2 className="plantid-section-title fade-up">
+            Built for <em>plant owners</em>
+          </h2>
+          <p className="plantid-kernel-intro fade-up">
+            For gardeners or plant owners who keep running into the same
+            problem: when something is wrong with their plant, a Google search
+            returns ten conflicting answers with no way to know which applies to
+            their situation. LeafLine walkes users through a plant diagnosis and
+            helps them maintain and stay educated about their plant.
+          </p>
+          <p className="plantid-kernel-intro fade-up">
+            The biggest challenge was building something smarter than a chatbot
+            — something that could gather evidence, form hypotheses, and arrive
+            at a real answer. That's where the Diagnostic Kernel came from.
+          </p>
+        </div>
+      </section>
+      <div className="plantid-divider"></div>
       {/* Kernel Section */}
       <section className="plantid-kernel-section">
         <div className="plantid-section">
-          <div className="plantid-section-label fade-up">Core Innovation</div>
+          <div className="plantid-section-label fade-up">Unique Feature</div>
           <h2 className="plantid-section-title fade-up">
             The <em>Diagnostic</em> Kernel
           </h2>
@@ -165,7 +177,6 @@ export default function PlantIDShowcase() {
             action — fetching data, forming hypotheses, asking questions, or
             concluding a diagnosis.
           </p>
-
           <div className="plantid-cycle-steps fade-up">
             <div className="plantid-cycle-step">
               <div className="plantid-step-num">01</div>
@@ -207,7 +218,6 @@ export default function PlantIDShowcase() {
               </div>
             </div>
           </div>
-
           <div className="plantid-code-showcase fade-up">
             <div className="plantid-code-card">
               <div className="plantid-code-card-header">
@@ -246,7 +256,6 @@ export default function PlantIDShowcase() {
                 {"}"}
               </div>
             </div>
-
             <div className="plantid-code-card">
               <div className="plantid-code-card-header">
                 <div className="plantid-code-dots">
@@ -283,9 +292,7 @@ export default function PlantIDShowcase() {
           </div>
         </div>
       </section>
-
       <div className="plantid-divider"></div>
-
       {/* Architecture Section */}
       <section className="plantid-features-section">
         <div className="plantid-section">
@@ -308,7 +315,6 @@ export default function PlantIDShowcase() {
                 <span className="plantid-arch-tag">Dependency Inversion</span>
               </div>
             </div>
-
             <div
               className="plantid-arch-card fade-up"
               style={{ animationDelay: "0.1s" }}
@@ -326,7 +332,6 @@ export default function PlantIDShowcase() {
                 <span className="plantid-arch-tag">DI Container</span>
               </div>
             </div>
-
             <div
               className="plantid-arch-card fade-up"
               style={{ animationDelay: "0.2s" }}
@@ -347,7 +352,6 @@ export default function PlantIDShowcase() {
           </div>
         </div>
       </section>
-
       {/* Security Section */}
       <section className="plantid-security-section">
         <div className="plantid-section">
@@ -414,7 +418,6 @@ export default function PlantIDShowcase() {
                 </li>
               </ul>
             </div>
-
             <div>
               <div className="plantid-flow-container">
                 <div className="plantid-flow-label">Execution Flow</div>
@@ -462,9 +465,7 @@ export default function PlantIDShowcase() {
           </div>
         </div>
       </section>
-
       <div className="plantid-divider"></div>
-
       {/* Features Section */}
       <section className="plantid-features-section">
         <div className="plantid-section">
@@ -477,26 +478,29 @@ export default function PlantIDShowcase() {
               <div className="plantid-feature-num">01 —</div>
               <div className="plantid-feature-title">Plant Identification</div>
               <p className="plantid-feature-desc">
-                Upload a photo. Plant.id API identifies the species. An LLM
-                generates a personalized care schedule — watering, light,
-                humidity, soil — stored as JSONB in PostgreSQL.
+                Upload a photo and the Plant.id API — a third-party
+                identification service — recognizes the species. LeafLine takes
+                it further: an LLM generates a personalized care schedule
+                covering watering, light, humidity, and soil, stored as JSONB in
+                PostgreSQL.
               </p>
             </div>
             <div className="plantid-feature-cell">
               <div className="plantid-feature-num">02 —</div>
               <div className="plantid-feature-title">Autonomous Diagnosis</div>
               <p className="plantid-feature-desc">
-                The Diagnostic Kernel autonomously cycles through up to 20
-                iterations, dynamically forming hypotheses and gathering
-                evidence before surfacing a finding and recommendation.
+                Where Plant.id stops at identification, LeafLine keeps going.
+                The Diagnostic Kernel cycles through up to 20 iterations,
+                forming hypotheses and gathering evidence before surfacing a
+                finding and actionable recommendation.
               </p>
             </div>
             <div className="plantid-feature-cell">
               <div className="plantid-feature-num">03 —</div>
               <div className="plantid-feature-title">General Plant Chat</div>
               <p className="plantid-feature-desc">
-                Simple, persistent LLM-powered chat sessions for plant care
-                questions. Conversation history saved per session. Multiple
+                Persistent LLM-powered chat sessions for any plant care
+                question. Conversation history saved per session with multiple
                 sessions supported per user.
               </p>
             </div>
@@ -512,7 +516,6 @@ export default function PlantIDShowcase() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="plantid-cta-section fade-up">
         <h2 className="plantid-cta-title">
@@ -537,11 +540,10 @@ export default function PlantIDShowcase() {
           </Link>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="plantid-footer">
         <div className="plantid-footer-name">Lucy Bernard</div>
-        <div className="plantid-footer-meta">PLANTID · FULL-STACK · 2025</div>
+        <div className="plantid-footer-meta">LEAFLINE · FULL-STACK · 2025</div>
       </footer>
     </div>
   );

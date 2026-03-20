@@ -1,22 +1,19 @@
 import { Link } from "react-router";
 import { useState } from "react";
-
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
-
   const handleFilter = (filter) => {
     setActiveFilter(filter);
   };
-
   const projectsData = [
     {
       id: "plantid",
       featured: true,
       index: "01 — AI / Full-Stack",
-      title: "PlantID",
+      title: "LeafLine",
       subtitle: "Autonomous plant diagnostic app",
       description:
-        "An AI-powered plant health platform built around a self-generating Diagnostic Kernel — an autonomous agent that cyclically produces Python code within a sandboxed environment to identify root causes across up to 20 diagnostic cycles. Hexagonal architecture, FastAPI backend, Next.js frontend.",
+        "Built for a real problem: Plant owners who have a difficult time taking care of their plants. Plant.id is a third-party API that handles species identification — LeafLine takes it further with autonomous diagnosis and AI chat. The core is a self-generating Diagnostic Kernel — an autonomous agent that cyclically produces Python code within a sandboxed environment to identify root causes across up to 20 diagnostic cycles. FastAPI backend on Render, Next.js frontend on Vercel, PostgreSQL via Supabase.",
       tags: [
         { label: "Python", type: "t-primary" },
         { label: "FastAPI", type: "t-primary" },
@@ -92,7 +89,6 @@ export default function Projects() {
       className: "card--zensurf",
     },
   ];
-
   const filterOptions = [
     { label: "All", value: "all" },
     { label: "Python", value: "python" },
@@ -101,12 +97,10 @@ export default function Projects() {
     { label: "SQL / DB", value: "sql" },
     { label: "UI / UX", value: "ux" },
   ];
-
   const filteredProjects = projectsData.filter((project) => {
     if (activeFilter === "all") return true;
     return project.dataTags.includes(activeFilter);
   });
-
   return (
     <>
       {/* HERO */}
@@ -134,7 +128,6 @@ export default function Projects() {
           <div className="hero-count-label">Projects</div>
         </div>
       </header>
-
       {/* FILTER BAR */}
       <div className="filter-bar">
         <span className="filter-label">Filter</span>
@@ -148,7 +141,6 @@ export default function Projects() {
           </button>
         ))}
       </div>
-
       {/* PROJECTS GRID */}
       <div className="projects-wrapper">
         <div className="projects-grid" id="projects-grid">
@@ -232,7 +224,6 @@ export default function Projects() {
             </Link>
           ))}
         </div>
-
         {/* No results message */}
         {filteredProjects.length === 0 && (
           <div className="no-results">
@@ -240,7 +231,6 @@ export default function Projects() {
           </div>
         )}
       </div>
-
       {/* ALSO SECTION */}
       <div className="also-section">
         <div className="also-title">Also available</div>
@@ -277,7 +267,6 @@ export default function Projects() {
           </Link>
         </div>
       </div>
-
       {/* FOOTER */}
       <footer className="projects-footer">
         <div className="footer-name">Lucy Bernard</div>
