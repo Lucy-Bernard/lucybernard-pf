@@ -6,7 +6,7 @@ export default function Dashboard() {
     {
       id: "plantid",
       index: "01 — AI / Full-Stack",
-      title: "PlantID",
+      title: "LeafLine",
       subtitle: "Autonomous plant diagnostic app",
       description:
         "An AI-powered plant health platform built around a self-generating Diagnostic Kernel — an autonomous agent that cyclically produces Python code within a sandboxed environment.",
@@ -41,31 +41,76 @@ export default function Dashboard() {
               View My Work <i className="fa-solid fa-arrow-right"></i>
             </Link>
           </div>
-          <div className="dashboard-hero-image ">
+          <div className="dashboard-hero-image">
             <img src={profileImage} alt="Lucy Bernard" />
             <div className="dashboard-hero-badge">Based in Chicago</div>
           </div>
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="dashboard-stats">
-        <div className="dashboard-stats-grid">
-          <div className="dashboard-stat">
-            <div className="dashboard-stat-value">4+</div>
-            <div className="dashboard-stat-label">Projects</div>
-          </div>
-          <div className="dashboard-stat">
-            <div className="dashboard-stat-value">3</div>
-            <div className="dashboard-stat-label">Years Coding</div>
-          </div>
-          <div className="dashboard-stat">
-            <div className="dashboard-stat-value">10+</div>
-            <div className="dashboard-stat-label">Technologies</div>
-          </div>
-          <div className="dashboard-stat">
-            <div className="dashboard-stat-value">2025</div>
-            <div className="dashboard-stat-label">Graduating</div>
+      {/* SKILLS */}
+      <section className="dashboard-skills">
+        <div className="dashboard-skills-inner">
+          <div className="dashboard-skills-container">
+            <div className="dashboard-skills-group">
+              <div className="dashboard-skills-heading">
+                <em>Frontend</em>
+              </div>
+              <div className="dashboard-skills-chips">
+                {[
+                  "React",
+                  "Next.js",
+                  "Angular",
+                  "TypeScript",
+                  "JavaScript",
+                  "Tailwind CSS",
+                ].map((skill) => (
+                  <span key={skill} className="dashboard-skill-chip">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="dashboard-skills-group">
+              <div className="dashboard-skills-heading">
+                <em>Backend</em>
+              </div>
+              <div className="dashboard-skills-chips">
+                {["Python", "FastAPI", "C#", "ASP.NET", "Node.js", "Java"].map(
+                  (skill) => (
+                    <span key={skill} className="dashboard-skill-chip">
+                      {skill}
+                    </span>
+                  ),
+                )}
+              </div>
+            </div>
+            <div className="dashboard-skills-group">
+              <div className="dashboard-skills-heading">
+                <em>Data</em>
+              </div>
+              <div className="dashboard-skills-chips">
+                {["PostgreSQL", "SQL", "T-SQL", "REST APIs"].map((skill) => (
+                  <span key={skill} className="dashboard-skill-chip">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="dashboard-skills-group">
+              <div className="dashboard-skills-heading">
+                <em>Tools</em>
+              </div>
+              <div className="dashboard-skills-chips">
+                {["Git", "Docker", "Azure DevOps", "Vercel", "CI/CD"].map(
+                  (skill) => (
+                    <span key={skill} className="dashboard-skill-chip">
+                      {skill}
+                    </span>
+                  ),
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </section>

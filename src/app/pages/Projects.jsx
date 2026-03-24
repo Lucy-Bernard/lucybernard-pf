@@ -13,7 +13,7 @@ export default function Projects() {
       title: "LeafLine",
       subtitle: "Autonomous plant diagnostic app",
       description:
-        "Built for a real problem: Plant owners who have a difficult time taking care of their plants. Plant.id is a third-party API that handles species identification — LeafLine takes it further with autonomous diagnosis and AI chat. The core is a self-generating Diagnostic Kernel — an autonomous agent that cyclically produces Python code within a sandboxed environment to identify root causes across up to 20 diagnostic cycles. FastAPI backend on Render, Next.js frontend on Vercel, PostgreSQL via Supabase.",
+        "Built for a real problem: Plant owners who have a difficult time taking care of their plants. Plant.id is a third-party API that handles species identification — LeafLine takes it further with autonomous diagnosis and AI chat. The core is a self-generating Diagnostic Kernel — an autonomous agent that cyclically produces Python code within a sandboxed environment to identify root causes across up to 20 diagnostic cycles. FastAPI backend on Render, Next.js frontend on Vercel, PsostgreSQL via Supabase.",
       tags: [
         { label: "Python", type: "t-primary" },
         { label: "FastAPI", type: "t-primary" },
@@ -30,7 +30,7 @@ export default function Projects() {
         { value: "AI", label: "Code Gen" },
       ],
       footer: "Lucy Bernard · 2024",
-      dataTags: "python javascript sql ai",
+      dataTags: "python nextjs react sql ai",
       className: "card--plantid",
     },
     {
@@ -49,7 +49,7 @@ export default function Projects() {
         { label: "MVC", type: "t-accent" },
       ],
       footer: "Lucy Bernard · 2024",
-      dataTags: "javascript sql",
+      dataTags: "nextjs react sql",
       className: "card--g8",
     },
     {
@@ -94,12 +94,16 @@ export default function Projects() {
     { label: "Python", value: "python" },
     { label: "Java", value: "java" },
     { label: "JavaScript", value: "javascript" },
+    { label: "React", value: "react" },
+    { label: "Next.js", value: "nextjs" },
     { label: "SQL / DB", value: "sql" },
     { label: "UI / UX", value: "ux" },
   ];
   const filteredProjects = projectsData.filter((project) => {
     if (activeFilter === "all") return true;
-    return project.dataTags.includes(activeFilter);
+    // Split tags into array and check for exact match
+    const tags = project.dataTags.split(/\s+/);
+    return tags.includes(activeFilter);
   });
   return (
     <>

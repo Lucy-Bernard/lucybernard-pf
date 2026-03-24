@@ -41,27 +41,16 @@ export default function Resume() {
             </div>
             <ul className="resume-experience-list-items">
               <li>
-                Developed a visibility feature with frontend-Angular and
-                endpoints that shows users which sections contain data,
-                enhancing UI and improving content management using UI feedback.
+                Designed and built full-stack data visibility feature including backend API endpoints and frontend Angular components reducing user navigation time.
               </li>
               <li>
-                Optimized query efficiency by establishing critical data entry
-                workflows and resolving data formatting issues in faster page
-                loads and improved user experience.
+                Developed RESTful APIs and optimized backend services, improving application performance and response times.
               </li>
               <li>
-                Enhanced user interface usability by fixing critical bugs in
-                data entry workflows and improving error handling with clear,
-                actionable error messages.
+                Enhanced product reliability by fixing critical bugs and implementing improved error handling across distributed system components.
               </li>
               <li>
-                Participated in thorough code reviews, daily standups, and
-                sprint planning meetings as part of an Agile development team.
-              </li>
-              <li>
-                Used Git and GitHub for version control and collaborative
-                development workflows.
+                Collaborated with cross-functional Agile development team through code reviews, daily standups, and sprint planning, and contributed to CI/CD workflows by deploying code through automated build and release pipelines in Azure DevOps.
               </li>
             </ul>
           </div>
