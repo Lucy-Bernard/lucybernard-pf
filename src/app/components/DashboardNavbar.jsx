@@ -74,6 +74,16 @@ export function DashboardNavbar() {
             Resume
           </Link>
         </li>
+        <li>
+          <a
+            href="https://github.com/Lucy-Bernard"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleLinkClick}
+          >
+            GitHub
+          </a>
+        </li>
       </ul>
 
       <div className="lb-nav__sep"></div>

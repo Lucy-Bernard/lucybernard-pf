@@ -4,6 +4,7 @@ import PlantIDShowcase from "./PlantIDShowcase";
 import G8Showcase from "./G8Showcase";
 import ZenSurfShowcase from "./ZenSurfShowcase";
 import FarMartShowcase from "./FarMartShowcase";
+import CommonGroundShowcase from "./CommonGroundShowcase";
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -34,6 +35,10 @@ export default function ProjectDetail() {
 
   if (project.id === "farmart") {
     return <FarMartShowcase />;
+  }
+
+  if (project.id === "commonground") {
+    return <CommonGroundShowcase />;
   }
 
   // Fallback for projects without custom showcases

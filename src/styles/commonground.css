@@ -1,0 +1,797 @@
+/* ============================================================
+   commonground.css — Common Ground Showcase Page
+   All classes use the cg- prefix to avoid conflicts with
+   other showcase pages.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Pacifico&family=Rubik+80s+Fade&display=swap");
+
+/* === Root === */
+.cg-showcase {
+  background: #0d1520;
+  color: #f5f0e8;
+  font-family: "Josefin Sans", sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Noise texture layer */
+.cg-showcase::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* === Topbar === */
+.cg-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 48px;
+  background: rgba(13, 21, 32, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(196, 69, 69, 0.25);
+}
+
+.cg-back-link {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8a9ab5;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cg-back-link:hover {
+  color: #c44545;
+}
+
+.cg-topbar-tag {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(196, 69, 69, 0.65);
+}
+
+/* === Hero === */
+.cg-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.cg-hero-left {
+  background: linear-gradient(155deg, #0d1520 0%, #1a0d14 100%);
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Red bottom rule on hero left */
+.cg-hero-left::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 64px;
+  right: 64px;
+  height: 1px;
+  background: linear-gradient(to right, #c44545, transparent);
+}
+
+.cg-hero-right {
+  background: #080f18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 64px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Subtle red radial glow in hero right */
+.cg-hero-right::before {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(196, 69, 69, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cg-wip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(196, 69, 69, 0.6);
+  background: rgba(196, 69, 69, 0.12);
+  color: #c44545;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  width: fit-content;
+}
+
+.cg-hero-eyebrow {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #8a9ab5;
+  margin-bottom: 16px;
+}
+
+.cg-hero-title {
+  font-family: "Rubik 80s Fade", "Josefin Sans", sans-serif;
+  font-size: clamp(54px, 7vw, 88px);
+  line-height: 0.92;
+  color: #f5f0e8;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.cg-hero-title em {
+  font-style: normal;
+  color: #c44545;
+}
+
+.cg-hero-subtitle {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.7);
+  line-height: 1.65;
+  max-width: 400px;
+  margin-bottom: 40px;
+}
+
+.cg-hero-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* === Buttons === */
+.cg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 3px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.cg-btn-primary {
+  background: #c44545;
+  color: #f5f0e8;
+}
+
+.cg-btn-primary:hover {
+  background: #d95050;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(196, 69, 69, 0.4);
+}
+
+.cg-btn-outline {
+  background: transparent;
+  color: #f5f0e8;
+  border: 1.5px solid rgba(245, 240, 232, 0.3);
+}
+
+.cg-btn-outline:hover {
+  border-color: #c44545;
+  color: #c44545;
+  transform: translateY(-2px);
+}
+
+.cg-btn-ghost {
+  background: transparent;
+  color: #8a9ab5;
+  border: 1.5px solid rgba(138, 154, 181, 0.25);
+}
+
+.cg-btn-ghost:hover {
+  color: #f5f0e8;
+  border-color: rgba(245, 240, 232, 0.4);
+  transform: translateY(-2px);
+}
+
+/* === Polaroid placeholder === */
+.cg-polaroid {
+  transform: rotate(7deg);
+  background: #f5f0e8;
+  padding: 12px 12px 40px 12px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 320px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.cg-polaroid-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #1a1a2e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.cg-polaroid-placeholder-label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.35);
+}
+
+.cg-polaroid-placeholder-note {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 10px;
+  font-style: italic;
+  color: rgba(196, 69, 69, 0.5);
+  letter-spacing: 0.1em;
+}
+
+.cg-polaroid-caption {
+  font-family: "Pacifico", cursive;
+  font-size: 14px;
+  color: #3a3535;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* === WIP Status Strip === */
+.cg-status-strip {
+  background: rgba(196, 69, 69, 0.1);
+  border-top: 1px solid rgba(196, 69, 69, 0.3);
+  border-bottom: 1px solid rgba(196, 69, 69, 0.3);
+  padding: 36px 64px;
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.cg-status-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cg-status-text {
+  flex: 1;
+}
+
+.cg-status-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c44545;
+  margin-bottom: 8px;
+}
+
+.cg-status-desc {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.7);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+.cg-status-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.cg-status-pill {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(196, 69, 69, 0.4);
+  color: rgba(196, 69, 69, 0.9);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* === Divider === */
+.cg-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(196, 69, 69, 0.3), transparent);
+  position: relative;
+  z-index: 2;
+}
+
+/* === Sections === */
+.cg-section {
+  padding: 96px 64px;
+  position: relative;
+  z-index: 2;
+}
+
+.cg-section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cg-section-eyebrow {
+  font-family: "Pacifico", cursive;
+  font-size: 15px;
+  color: #c44545;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+
+.cg-section-title {
+  font-family: "Rubik 80s Fade", "Josefin Sans", sans-serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 400;
+  color: #f5f0e8;
+  line-height: 1.1;
+  margin-bottom: 40px;
+}
+
+.cg-section-title em {
+  font-style: normal;
+  color: #c44545;
+}
+
+/* === Reveal animation === */
+.cg-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.cg-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Origin Section === */
+.cg-origin-section {
+  background: rgba(15, 22, 33, 0.6);
+}
+
+.cg-origin-body {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.75);
+  line-height: 1.85;
+  max-width: 720px;
+  margin-bottom: 20px;
+}
+
+.cg-origin-body:last-child {
+  margin-bottom: 0;
+}
+
+/* === Features Grid === */
+.cg-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: rgba(196, 69, 69, 0.15);
+  border: 1px solid rgba(196, 69, 69, 0.2);
+}
+
+.cg-feature-card {
+  background: rgba(13, 21, 32, 0.9);
+  padding: 36px 32px;
+  transition: background 0.2s;
+}
+
+.cg-feature-card:hover {
+  background: rgba(20, 30, 46, 0.95);
+}
+
+.cg-feature-num {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #c44545;
+  margin-bottom: 14px;
+}
+
+.cg-feature-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f5f0e8;
+  margin-bottom: 12px;
+}
+
+.cg-feature-desc {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.6);
+  line-height: 1.7;
+}
+
+/* === Tech Stack === */
+.cg-tech-section {
+  background: #080f18;
+}
+
+.cg-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 64px;
+}
+
+.cg-tech-group-label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #8a9ab5;
+  margin-bottom: 14px;
+}
+
+.cg-tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cg-tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 3px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+
+.cg-pill-fe {
+  background: rgba(100, 130, 200, 0.08);
+  border-color: rgba(100, 130, 200, 0.3);
+  color: #8ab4e8;
+}
+
+.cg-pill-be {
+  background: rgba(196, 69, 69, 0.08);
+  border-color: rgba(196, 69, 69, 0.3);
+  color: #d47070;
+}
+
+.cg-pill-scrape {
+  background: rgba(138, 154, 181, 0.08);
+  border-color: rgba(138, 154, 181, 0.3);
+  color: #8a9ab5;
+}
+
+.cg-pill-data {
+  background: rgba(245, 240, 232, 0.05);
+  border-color: rgba(245, 240, 232, 0.2);
+  color: rgba(245, 240, 232, 0.6);
+}
+
+/* === Scraper Section === */
+.cg-scraper-section {
+  background: rgba(15, 22, 33, 0.5);
+}
+
+.cg-scraper-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 64px;
+  align-items: start;
+}
+
+.cg-scraper-body {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.7);
+  line-height: 1.8;
+  margin-bottom: 16px;
+  max-width: 560px;
+}
+
+.cg-scraper-body:last-child {
+  margin-bottom: 0;
+}
+
+.cg-code {
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 13px;
+  color: #c44545;
+  background: rgba(196, 69, 69, 0.1);
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid rgba(196, 69, 69, 0.2);
+}
+
+/* Scraper flow diagram */
+.cg-scraper-flow {
+  min-width: 220px;
+}
+
+.cg-flow-label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #8a9ab5;
+  margin-bottom: 16px;
+}
+
+.cg-flow-step {
+  background: rgba(13, 21, 32, 0.9);
+  border: 1px solid rgba(138, 154, 181, 0.2);
+  border-radius: 3px;
+  padding: 11px 16px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.65);
+  text-align: center;
+}
+
+.cg-flow-step--red {
+  border-color: rgba(196, 69, 69, 0.4);
+  color: #c44545;
+  background: rgba(196, 69, 69, 0.08);
+}
+
+.cg-flow-arrow {
+  text-align: center;
+  color: rgba(196, 69, 69, 0.5);
+  font-size: 14px;
+  padding: 4px 0;
+  display: block;
+}
+
+/* === Roadmap === */
+.cg-roadmap-subtitle {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #c44545;
+  margin-bottom: 16px;
+  margin-top: 40px;
+}
+
+.cg-roadmap-subtitle:first-of-type {
+  margin-top: 0;
+}
+
+.cg-roadmap-subtitle--future {
+  color: #8a9ab5;
+}
+
+.cg-roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: rgba(138, 154, 181, 0.1);
+  border: 1px solid rgba(138, 154, 181, 0.15);
+  margin-bottom: 4px;
+}
+
+.cg-roadmap-item {
+  background: rgba(13, 21, 32, 0.9);
+  padding: 28px 24px;
+}
+
+.cg-roadmap-status {
+  display: inline-block;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+
+.cg-roadmap-item--wip .cg-roadmap-status {
+  background: rgba(196, 69, 69, 0.15);
+  border: 1px solid rgba(196, 69, 69, 0.4);
+  color: #c44545;
+}
+
+.cg-roadmap-item--planned .cg-roadmap-status {
+  background: rgba(138, 154, 181, 0.1);
+  border: 1px solid rgba(138, 154, 181, 0.3);
+  color: #8a9ab5;
+}
+
+.cg-roadmap-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.75);
+}
+
+/* === CTA === */
+.cg-cta-section {
+  padding: 96px 64px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background: rgba(8, 15, 24, 0.7);
+}
+
+.cg-cta-title {
+  font-family: "Rubik 80s Fade", "Josefin Sans", sans-serif;
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 400;
+  color: #f5f0e8;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.cg-cta-title em {
+  font-style: normal;
+  color: #c44545;
+}
+
+.cg-cta-desc {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.55);
+  margin-bottom: 40px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.cg-cta-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* === Footer === */
+.cg-footer {
+  padding: 32px 64px;
+  border-top: 1px solid rgba(196, 69, 69, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cg-footer-name {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.5);
+}
+
+.cg-footer-meta {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(196, 69, 69, 0.5);
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .cg-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .cg-hero-right {
+    padding: 48px 32px;
+    min-height: 340px;
+  }
+
+  .cg-hero-left {
+    padding: 64px 32px;
+  }
+
+  .cg-topbar {
+    padding: 16px 24px;
+  }
+
+  .cg-section {
+    padding: 64px 32px;
+  }
+
+  .cg-status-strip {
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px;
+  }
+
+  .cg-status-pills {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cg-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cg-tech-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cg-scraper-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cg-roadmap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cg-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 24px 32px;
+  }
+}

@@ -13,7 +13,7 @@ export default function Projects() {
       title: "LeafLine",
       subtitle: "Autonomous plant diagnostic app",
       description:
-        "Built for a real problem: Plant owners who have a difficult time taking care of their plants. Plant.id is a third-party API that handles species identification — LeafLine takes it further with autonomous diagnosis and AI chat. The core is a self-generating Diagnostic Kernel — an autonomous agent that cyclically produces Python code within a sandboxed environment to identify root causes across up to 20 diagnostic cycles. FastAPI backend on Render, Next.js frontend on Vercel, PsostgreSQL via Supabase.",
+        "Built an AI powered plant care assistant that automates diagnosis, using an AI agent that identifies a plant's species, asks targeted questions, and delivers treatment plans. The responsive frontend, built with React and Tailwind CSS, features identification dashboards, personalized care schedules, and real time multi turn conversations. To improve reliability and reduce hallucination, I engineered an autonomous AI agent using OpenRouter LLM APIs and the Plant.id API, with structured markdown rule files enforcing strict response guidelines. On the backend, I built a PostgreSQL database through Supabase and RESTful FastAPI endpoints, secured every query with user scoped JWT authentication, and deployed to Vercel and Render.",
       tags: [
         { label: "Python", type: "t-primary" },
         { label: "FastAPI", type: "t-primary" },
@@ -24,22 +24,41 @@ export default function Projects() {
         { label: "Hexagonal Architecture", type: "t-accent" },
       ],
       metrics: [
-        { value: "20", label: "Max Cycles" },
-        { value: "5", label: "Arch Layers" },
-        { value: "100%", label: "Sandboxed" },
-        { value: "AI", label: "Code Gen" },
+        { value: "AI", label: "Autonomous" },
+        { value: "", label: "" },
+        { value: "", label: "" },
+        { value: "Security", label: "Sandboxed · JWT" },
       ],
-      footer: "Lucy Bernard · 2024",
+      footer: "Lucy Bernard · 2025",
       dataTags: "python nextjs react sql ai",
       className: "card--plantid",
     },
     {
+      id: "commonground",
+      index: "02 — Full-Stack / Web App",
+      title: "Common Ground",
+      subtitle: "Chicago dance studio directory",
+      description:
+        "A curated directory of adult dance studios in Chicago with live class schedules scraped via Puppeteer, honest reviews, and filters that actually help you find a class. Built for the Chicago adult dance community, still actively in development.",
+      tags: [
+        { label: "React 19", type: "t-primary" },
+        { label: "Node.js", type: "t-primary" },
+        { label: "Express 5", type: "t-primary" },
+        { label: "PostgreSQL", type: "t-secondary" },
+        { label: "Puppeteer", type: "t-secondary" },
+        { label: "In Progress", type: "t-accent" },
+      ],
+      footer: "Lucy Bernard · 2026",
+      dataTags: "react javascript sql",
+      className: "card--commonground",
+    },
+    {
       id: "g8",
-      index: "02 — Full-Stack / E-Commerce",
+      index: "03 — Full-Stack / E-Commerce",
       title: "G8",
       subtitle: "E-commerce platform",
       description:
-        "A full-stack e-commerce application built with C#, ASP.NET, and React following strict MVC architecture. Features cart management, user authentication, checkout with regex card validation, and SQL injection–resistant parameterized queries. Dockerized for cross-platform MSSQL compatibility.",
+        "A full-stack e-commerce application built with C#, ASP.NET, and React following strict MVC architecture. Features cart management, user authentication, checkout with regex card validation, and SQL injection resistant parameterized queries. Dockerized for cross-platform MSSQL compatibility.",
       tags: [
         { label: "C#", type: "t-primary" },
         { label: "ASP.NET", type: "t-primary" },
@@ -48,13 +67,13 @@ export default function Projects() {
         { label: "Docker", type: "t-secondary" },
         { label: "MVC", type: "t-accent" },
       ],
-      footer: "Lucy Bernard · 2024",
+      footer: "Lucy Bernard · 2023",
       dataTags: "nextjs react sql",
       className: "card--g8",
     },
     {
       id: "farmart",
-      index: "03 — Java / Databases",
+      index: "04 — Java / Databases",
       title: "FarMarT",
       subtitle: "Sales system design",
       description:
@@ -72,11 +91,11 @@ export default function Projects() {
     },
     {
       id: "zensurf",
-      index: "04 — Chrome Extension / UI-UX",
+      index: "05 — Chrome Extension / UI-UX",
       title: "ZenSurf",
       subtitle: "Anxiety-reducing browser extension",
       description:
-        "A Chrome Manifest V3 extension providing quick access to breathing exercises, meditation timers, and ambient sound — all without leaving your current tab. A focused exploration of UI/UX principles: readability, accessibility, emotional design, and drag-and-drop customization.",
+        "A Chrome (Manifest V3) extension prototype offering quick access to calming tools like breathing exercises, a meditation timer, ambient sound, and a drag and drop customizable layout, all without leaving your current tab. Built by myself and Joey Ng as a focused exploration of UI/UX principles including readability, accessibility, emotional design, and intuitive customization, with a working but intentionally limited feature set that prioritized getting the user experience right.",
       tags: [
         { label: "JavaScript", type: "t-primary" },
         { label: "HTML / CSS", type: "t-primary" },
@@ -113,7 +132,7 @@ export default function Projects() {
           <div className="hero-eyebrow">
             <div className="eyebrow-line"></div>
             <span className="eyebrow-text">
-              Software Engineering · React · Java · Python · JavaScript · SQL
+              React · Java · Python · JavaScript · SQL
             </span>
           </div>
           <h1 className="hero-title">
@@ -128,7 +147,7 @@ export default function Projects() {
           </p>
         </div>
         <div className="hero-count">
-          <div className="hero-count-num">04</div>
+          <div className="hero-count-num">05</div>
           <div className="hero-count-label">Projects</div>
         </div>
       </header>
@@ -176,7 +195,10 @@ export default function Projects() {
                     <div className="featured-right">
                       <div className="featured-metrics">
                         {project.metrics.map((metric, i) => (
-                          <div key={i} className="feat-metric">
+                          <div
+                            key={i}
+                            className={`feat-metric ${metric.value ? "" : "feat-metric--empty"}`}
+                          >
                             <div className="feat-metric-val">
                               {metric.value}
                             </div>

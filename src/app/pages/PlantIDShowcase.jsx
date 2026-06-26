@@ -30,22 +30,26 @@ export default function PlantIDShowcase() {
             </h1>
             <p className="plantid-hero-subtitle">
               An AI-powered plant diagnostic platform featuring an autonomous
-              Diagnostic Kernel — an agent that generates and executes code to
+              Diagnostic Kernel, an agent that generates and executes code to
               diagnose plant health.
             </p>
-            <div className="plantid-hero-meta">
-              <div>
-                <span className="plantid-hero-stat-value">2</span>
-                <span className="plantid-hero-stat-label">Services</span>
-              </div>
-              <div>
-                <span className="plantid-hero-stat-value">20+</span>
-                <span className="plantid-hero-stat-label">Endpoints</span>
-              </div>
-              <div>
-                <span className="plantid-hero-stat-value">Hex</span>
-                <span className="plantid-hero-stat-label">Architecture</span>
-              </div>
+            <div className="plantid-hero-links">
+              <a
+                href="https://github.com/Lucy-Bernard/leafline"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="plantid-btn plantid-btn-primary"
+              >
+                View on GitHub ↗
+              </a>
+              <a
+                href="https://leafline-phi.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="plantid-btn plantid-btn-outline"
+              >
+                Live App ↗
+              </a>
             </div>
           </div>
         </div>
@@ -120,27 +124,19 @@ export default function PlantIDShowcase() {
               </span>
             </div>
           </div>
+          <div>
+            <div className="plantid-stack-group-label">Demo Video</div>
+            <div className="plantid-video-embed">
+              <iframe
+                src="https://www.loom.com/embed/a804230d614f49759a9d4ee7c71465c7"
+                title="Leafline demo"
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
         </div>
       </section>
-      {/* Impact Strip */}
-      <div className="plantid-impact-strip">
-        <div className="plantid-impact-stat">
-          <span className="plantid-impact-value">5</span>
-          <span className="plantid-impact-label">Architectural Layers</span>
-        </div>
-        <div className="plantid-impact-stat">
-          <span className="plantid-impact-value">20</span>
-          <span className="plantid-impact-label">Max Kernel Cycles</span>
-        </div>
-        <div className="plantid-impact-stat">
-          <span className="plantid-impact-value">4</span>
-          <span className="plantid-impact-label">Kernel Actions</span>
-        </div>
-        <div className="plantid-impact-stat">
-          <span className="plantid-impact-value">100%</span>
-          <span className="plantid-impact-label">Sandboxed Execution</span>
-        </div>
-      </div>
       <div className="plantid-divider"></div>
       {/* Origin Section */}
       <section className="plantid-kernel-section">
@@ -153,13 +149,13 @@ export default function PlantIDShowcase() {
             For gardeners or plant owners who keep running into the same
             problem: when something is wrong with their plant, a Google search
             returns ten conflicting answers with no way to know which applies to
-            their situation. LeafLine walkes users through a plant diagnosis and
+            their situation. LeafLine walks users through a plant diagnosis and
             helps them maintain and stay educated about their plant.
           </p>
           <p className="plantid-kernel-intro fade-up">
-            The biggest challenge was building something smarter than a chatbot
-            — something that could gather evidence, form hypotheses, and arrive
-            at a real answer. That's where the Diagnostic Kernel came from.
+            The biggest challenge was building something smarter than a chatbot,
+            something that could gather evidence, form hypotheses, and arrive at
+            a real answer. That's where the Diagnostic Kernel came from.
           </p>
         </div>
       </section>
@@ -174,8 +170,8 @@ export default function PlantIDShowcase() {
           <p className="plantid-kernel-intro fade-up">
             Unlike traditional chatbots, the Diagnostic Kernel is an autonomous
             agent. It generates Python code on every cycle to determine its next
-            action — fetching data, forming hypotheses, asking questions, or
-            concluding a diagnosis.
+            action, whether that means fetching data, forming hypotheses, asking
+            questions, or concluding a diagnosis.
           </p>
           <div className="plantid-cycle-steps fade-up">
             <div className="plantid-cycle-step">
@@ -198,8 +194,8 @@ export default function PlantIDShowcase() {
               <div className="plantid-step-num">03</div>
               <div className="plantid-step-title">Sandbox Execute</div>
               <div className="plantid-step-desc">
-                Code runs in RestrictedPython — no file I/O, no network,
-                whitelist only.
+                Code runs in RestrictedPython with no file I/O, no network, and
+                whitelist only access.
               </div>
             </div>
             <div className="plantid-cycle-step">
@@ -323,8 +319,8 @@ export default function PlantIDShowcase() {
               <div className="plantid-arch-card-title">Ports & Adapters</div>
               <p className="plantid-arch-card-desc">
                 Interfaces define contracts. Implementations are injected via
-                constructors. Swap any adapter — database, LLM, storage —
-                without touching core logic.
+                constructors. Swap any adapter, whether database, LLM, or
+                storage, without touching core logic.
               </p>
               <div className="plantid-arch-tags">
                 <span className="plantid-arch-tag">Constructor Injection</span>
@@ -339,9 +335,9 @@ export default function PlantIDShowcase() {
               <span className="plantid-arch-icon">≋</span>
               <div className="plantid-arch-card-title">Frontend Mirroring</div>
               <p className="plantid-arch-card-desc">
-                Next.js frontend follows the same separation — components are
-                dumb, hooks orchestrate logic, Zod validates all API boundaries
-                at runtime.
+                Next.js frontend follows the same separation, where components
+                are dumb, hooks orchestrate logic, and Zod validates all API
+                boundaries at runtime.
               </p>
               <div className="plantid-arch-tags">
                 <span className="plantid-arch-tag">Zustand Store</span>
@@ -364,8 +360,8 @@ export default function PlantIDShowcase() {
               <p className="plantid-security-intro">
                 Since the Diagnostic Kernel executes AI-generated code, security
                 is critical. The RestrictedPython sandbox uses a strict
-                whitelist approach — dangerous operations are blocked at compile
-                time, not runtime.
+                whitelist approach where dangerous operations are blocked at
+                compile time, not runtime.
               </p>
               <ul className="plantid-security-list">
                 <li className="plantid-security-item">
@@ -399,8 +395,8 @@ export default function PlantIDShowcase() {
                       Whitelisted builtins only
                     </div>
                     <div className="plantid-security-item-desc">
-                      Only str, int, dict, list, len, and json — nothing else
-                      can be called.
+                      Only str, int, dict, list, len, and json are available,
+                      nothing else can be called.
                     </div>
                   </div>
                 </li>
@@ -411,12 +407,20 @@ export default function PlantIDShowcase() {
                       Memory isolation
                     </div>
                     <div className="plantid-security-item-desc">
-                      Code executes with access only to the params dict — no
+                      Code executes with access only to the params dict, with no
                       server state.
                     </div>
                   </div>
                 </li>
               </ul>
+              <a
+                href="https://github.com/Lucy-Bernard/leafline/blob/main/api/adapter/impl/sandbox_executor_impl.py"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="plantid-btn plantid-btn-outline plantid-security-source"
+              >
+                View sandbox_executor_impl.py on GitHub ↗
+              </a>
             </div>
             <div>
               <div className="plantid-flow-container">
@@ -478,8 +482,8 @@ export default function PlantIDShowcase() {
               <div className="plantid-feature-num">01 —</div>
               <div className="plantid-feature-title">Plant Identification</div>
               <p className="plantid-feature-desc">
-                Upload a photo and the Plant.id API — a third-party
-                identification service — recognizes the species. LeafLine takes
+                Upload a photo and the Plant.id API, a third-party
+                identification service, recognizes the species. LeafLine takes
                 it further: an LLM generates a personalized care schedule
                 covering watering, light, humidity, and soil, stored as JSONB in
                 PostgreSQL.
@@ -508,8 +512,8 @@ export default function PlantIDShowcase() {
               <div className="plantid-feature-num">04 —</div>
               <div className="plantid-feature-title">Auth & Data Isolation</div>
               <p className="plantid-feature-desc">
-                JWT-based auth via Supabase. All queries are user-scoped — users
-                can only access their own plants and diagnoses. Middleware
+                JWT-based auth via Supabase. All queries are user-scoped, so
+                users can only access their own plants and diagnoses. Middleware
                 validates every request.
               </p>
             </div>
@@ -529,7 +533,7 @@ export default function PlantIDShowcase() {
         </p>
         <div className="plantid-cta-buttons">
           <a
-            href="https://github.com/Lucy-Bernard/plantId"
+            href="https://github.com/Lucy-Bernard/leafline"
             target="_blank"
             className="plantid-btn plantid-btn-primary"
           >

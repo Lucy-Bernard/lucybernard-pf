@@ -41,16 +41,25 @@ export default function Resume() {
             </div>
             <ul className="resume-experience-list-items">
               <li>
-                Designed and built full-stack data visibility feature including backend API endpoints and frontend Angular components reducing user navigation time.
+                Designed and built full-stack data visibility feature including
+                backend API endpoints using .NET and frontend Angular components,
+                reducing user navigation time and eliminating manual process for
+                data lookup.
               </li>
               <li>
-                Developed RESTful APIs and optimized backend services, improving application performance and response times.
+                Developed and optimized RESTful API endpoints and backend
+                services using .NET and SQL, improving application
+                responsiveness and reducing latency across key user-facing flows.
               </li>
               <li>
-                Enhanced product reliability by fixing critical bugs and implementing improved error handling across distributed system components.
+                Improved product reliability across distributed system components
+                by diagnosing and resolving critical bugs and implementing
+                systematic error handling to prevent recurring failures.
               </li>
               <li>
-                Collaborated with cross-functional Agile development team through code reviews, daily standups, and sprint planning, and contributed to CI/CD workflows by deploying code through automated build and release pipelines in Azure DevOps.
+                Contributed to cross-functional Agile team workflows through code
+                reviews, sprint planning, and daily standups, maintaining
+                delivery velocity across iterative release cycles.
               </li>
             </ul>
           </div>
@@ -69,12 +78,17 @@ export default function Resume() {
                 August 2023 - December 2023
               </div>
             </div>
-            <p className="resume-experience-desc">
-              Help students in Computer Science understand the fundamentals of
-              programming, and answer questions related to coursework, CS
-              principles, and python programming, developing strong
-              communication skills with technical concepts.
-            </p>
+            <ul className="resume-experience-list-items">
+              <li>
+                Strengthened 32 students' understanding of programming
+                fundamentals by holding office hours, leading lab sessions, and
+                providing one-on-one tutoring in Python and core CS concepts.
+              </li>
+              <li>
+                Improved student performance by grading assignments and providing
+                constructive feedback on code quality, logic, and best practices.
+              </li>
+            </ul>
           </div>
         </div>
       </section>

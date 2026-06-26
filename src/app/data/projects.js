@@ -108,6 +108,14 @@ export const projects = [
     github: "https://github.com/Lucy-Bernard/Farmart",
   },
   {
+    id: "commonground",
+    title: "Common Ground",
+    description:
+      "A curated directory of adult dance studios in Chicago with live class schedules, filters, and honest reviews.",
+    tags: ["React", "Node.js", "Express", "PostgreSQL", "Puppeteer"],
+    github: "https://github.com/Common-Ground-Co/common-ground",
+  },
+  {
     id: "zensurf",
     title: "ZenSurf",
     description:

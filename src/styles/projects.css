@@ -399,6 +399,11 @@
   transition: background 0.2s;
 }
 
+/* Empty diagonal cells use the beige tone from the card footer. */
+.feat-metric--empty {
+  background: var(--paper-dark);
+}
+
 .project-card:hover .feat-metric {
   background: var(--paper-dark);
 }
