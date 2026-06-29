@@ -78,15 +78,16 @@ export default function CommonGroundShowcase() {
         <div className="cg-status-text">
           <div className="cg-status-title">Actively in Development</div>
           <p className="cg-status-desc">
-            Common Ground is being built and privately tested with 4 friends from my Chicago dance
+            Common Ground is being built and privately tested with 5 dancers from my Chicago dance
             community. I'm currently refactoring the codebase, adding features, and iterating on
             the experience before opening it to the broader dance community in the city.
           </p>
         </div>
         <div className="cg-status-pills">
-          <span className="cg-status-pill">4 beta testers</span>
+          <span className="cg-status-pill">5 beta testers</span>
           <span className="cg-status-pill">Refactoring</span>
           <span className="cg-status-pill">Adding Features</span>
+          <span className="cg-status-pill">Cronitor</span>
         </div>
       </div>
 
@@ -128,32 +129,48 @@ export default function CommonGroundShowcase() {
               <div className="cg-feature-num">01</div>
               <div className="cg-feature-title">Curated Directory</div>
               <p className="cg-feature-desc">
-                Not just a Google Maps dump. A hand-curated list of Chicago adult dance studios
-                focused on choreography, with context that actually matters to dancers.
+                Hand-curated studios focused on adult choreography classes: Puzzle Box, Visceral Dance
+                Center, Indie Media, Dance Forever. Not a Google Maps dump.
               </p>
             </div>
             <div className="cg-feature-card">
               <div className="cg-feature-num">02</div>
               <div className="cg-feature-title">Live Class Schedules</div>
               <p className="cg-feature-desc">
-                Schedules are scraped live from studio websites using Puppeteer, including sites
-                built on Wix, Squarespace, and custom Ribbon booking widgets.
+                Schedules are scraped daily via a Cronitor-monitored cron job using Puppeteer, covering
+                Wix, Squarespace, and custom Ribbon booking widgets.
               </p>
             </div>
             <div className="cg-feature-card">
               <div className="cg-feature-num">03</div>
-              <div className="cg-feature-title">Honest Reviews</div>
+              <div className="cg-feature-title">Anonymous Reviews</div>
               <p className="cg-feature-desc">
-                Real feedback from real dancers, not SEO-optimized marketing copy.
-                [Review system in active development, placeholder]
+                Dancers can leave reviews without creating an account. Authors can edit or delete their
+                own reviews. No platform lock-in, no required sign-up.
               </p>
             </div>
             <div className="cg-feature-card">
               <div className="cg-feature-num">04</div>
-              <div className="cg-feature-title">Filters That Work</div>
+              <div className="cg-feature-title">Studio Filters</div>
               <p className="cg-feature-desc">
-                Filter by neighborhood, price, style, and schedule so you can actually find
-                something that fits your life. [Filter refinements in progress, placeholder]
+                Filter by dance style, level, and studio name. Built to actually narrow down options,
+                not just look like a filter bar.
+              </p>
+            </div>
+            <div className="cg-feature-card">
+              <div className="cg-feature-num">05</div>
+              <div className="cg-feature-title">IG Class Radar</div>
+              <p className="cg-feature-desc">
+                A dedicated page for finding classes through studio Instagram accounts, for studios
+                that post schedules on IG instead of their own site.
+              </p>
+            </div>
+            <div className="cg-feature-card">
+              <div className="cg-feature-num">06</div>
+              <div className="cg-feature-title">Admin CMS</div>
+              <p className="cg-feature-desc">
+                An admin page for managing studio content: add, edit, and delete studios. Adding a new
+                studio to the scraper takes one config file entry, no new scraper file needed.
               </p>
             </div>
           </div>
@@ -200,6 +217,14 @@ export default function CommonGroundShowcase() {
                 <span className="cg-tech-pill cg-pill-data">studios.json snapshot</span>
               </div>
             </div>
+            <div className="cg-tech-group">
+              <div className="cg-tech-group-label">Infrastructure</div>
+              <div className="cg-tech-pills">
+                <span className="cg-tech-pill cg-pill-scrape">Cronitor</span>
+                <span className="cg-tech-pill cg-pill-scrape">Cron Jobs</span>
+                <span className="cg-tech-pill cg-pill-scrape">Render</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -217,7 +242,8 @@ export default function CommonGroundShowcase() {
               Wix, some Squarespace, some custom Ribbon booking widgets. Puppeteer runs a headless
               Chrome browser to handle dynamic content, JavaScript-rendered pages, and embedded
               third-party widgets, pulling live schedule data that a standard HTTP fetch would miss
-              entirely.
+              entirely. Scrapes run on a daily cron job monitored by Cronitor so I get notified if
+              a scheduled run fails or goes silent.
             </p>
             <p className="cg-scraper-body">
               A{" "}
@@ -253,55 +279,59 @@ export default function CommonGroundShowcase() {
             Still <em>Building</em>
           </h2>
 
-          <div className="cg-roadmap-subtitle">Currently Working On</div>
+          <div className="cg-roadmap-subtitle">Planned</div>
           <div className="cg-roadmap-grid">
             <div className="cg-roadmap-item cg-roadmap-item--wip">
-              <span className="cg-roadmap-status">In Progress</span>
-              <div className="cg-roadmap-title">Refactor data seeding to use JSON objects instead of JS objects</div>
-            </div>
-            <div className="cg-roadmap-item cg-roadmap-item--wip">
-              <span className="cg-roadmap-status">In Progress</span>
-              <div className="cg-roadmap-title">Add authentication for the admin panel CMS</div>
-            </div>
-            <div className="cg-roadmap-item cg-roadmap-item--wip">
-              <span className="cg-roadmap-status">In Progress</span>
-              <div className="cg-roadmap-title">Integrate Ollama for AI-assisted scraping</div>
-            </div>
-            <div className="cg-roadmap-item cg-roadmap-item--wip">
-              <span className="cg-roadmap-status">In Progress</span>
+              <span className="cg-roadmap-status">Planned</span>
               <div className="cg-roadmap-title">Add more dance studios</div>
             </div>
             <div className="cg-roadmap-item cg-roadmap-item--wip">
-              <span className="cg-roadmap-status">In Progress</span>
+              <span className="cg-roadmap-status">Planned</span>
+              <div className="cg-roadmap-title">Studio detail page with payment method pop-up</div>
+            </div>
+            <div className="cg-roadmap-item cg-roadmap-item--wip">
+              <span className="cg-roadmap-status">Planned</span>
+              <div className="cg-roadmap-title">Better display of drop-in, class pack, and membership options per studio</div>
+            </div>
+            <div className="cg-roadmap-item cg-roadmap-item--wip">
+              <span className="cg-roadmap-status">Planned</span>
+              <div className="cg-roadmap-title">Review protection via rate limiting or lightweight auth to prevent spam</div>
+            </div>
+            <div className="cg-roadmap-item cg-roadmap-item--wip">
+              <span className="cg-roadmap-status">Planned</span>
+              <div className="cg-roadmap-title">Refactor data seeding to use JSON instead of JS objects</div>
+            </div>
+            <div className="cg-roadmap-item cg-roadmap-item--wip">
+              <span className="cg-roadmap-status">Planned</span>
               <div className="cg-roadmap-title">Refactor backend to separate responsibilities across layers</div>
             </div>
             <div className="cg-roadmap-item cg-roadmap-item--wip">
-              <span className="cg-roadmap-status">In Progress</span>
-              <div className="cg-roadmap-title">Studio details page with payment method pop-up</div>
+              <span className="cg-roadmap-status">Planned</span>
+              <div className="cg-roadmap-title">Explore IFTTT for automated API calls</div>
             </div>
             <div className="cg-roadmap-item cg-roadmap-item--wip">
-              <span className="cg-roadmap-status">In Progress</span>
-              <div className="cg-roadmap-title">Cron job service for scheduled scraping</div>
-            </div>
-            <div className="cg-roadmap-item cg-roadmap-item--wip">
-              <span className="cg-roadmap-status">In Progress</span>
-              <div className="cg-roadmap-title">Decide on final app name placement</div>
+              <span className="cg-roadmap-status">Planned</span>
+              <div className="cg-roadmap-title">Wrap app with Capacitor for mobile (modern Cordova alternative)</div>
             </div>
           </div>
 
-          <div className="cg-roadmap-subtitle cg-roadmap-subtitle--future">Future Improvements</div>
+          <div className="cg-roadmap-subtitle cg-roadmap-subtitle--future">Future</div>
           <div className="cg-roadmap-grid">
             <div className="cg-roadmap-item cg-roadmap-item--planned">
               <span className="cg-roadmap-status">Future</span>
-              <div className="cg-roadmap-title">Full CMS for the entire application</div>
+              <div className="cg-roadmap-title">Full CMS for managing all site content</div>
             </div>
             <div className="cg-roadmap-item cg-roadmap-item--planned">
               <span className="cg-roadmap-status">Future</span>
-              <div className="cg-roadmap-title">IG page re-envisioned</div>
+              <div className="cg-roadmap-title">Instagram page redesign</div>
             </div>
             <div className="cg-roadmap-item cg-roadmap-item--planned">
               <span className="cg-roadmap-status">Future</span>
-              <div className="cg-roadmap-title">Better display for dance studio payment alternatives</div>
+              <div className="cg-roadmap-title">Embedded or live per-studio class schedule on studio detail page</div>
+            </div>
+            <div className="cg-roadmap-item cg-roadmap-item--planned">
+              <span className="cg-roadmap-status">Future</span>
+              <div className="cg-roadmap-title">Error handling layer</div>
             </div>
             <div className="cg-roadmap-item cg-roadmap-item--planned">
               <span className="cg-roadmap-status">Future</span>
@@ -309,7 +339,7 @@ export default function CommonGroundShowcase() {
             </div>
             <div className="cg-roadmap-item cg-roadmap-item--planned">
               <span className="cg-roadmap-status">Future</span>
-              <div className="cg-roadmap-title">Error handling layer</div>
+              <div className="cg-roadmap-title">Full mobile app</div>
             </div>
           </div>
         </div>

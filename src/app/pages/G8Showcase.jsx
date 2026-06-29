@@ -51,9 +51,17 @@ export default function G8Showcase() {
             </h1>
             <p className="g8-intro-desc">
               A full-stack e-commerce application with cart management, secure
-              authentication, real-time search, and checkout — built on ASP.NET,
+              authentication, real-time search, and checkout built on ASP.NET,
               MSSQL, and Next.js.
             </p>
+            <a
+              href="https://github.com/Lucy-Bernard/G8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="g8-intro-link"
+            >
+              View on GitHub ↗
+            </a>
           </div>
           <div className="g8-intro-specs g8-reveal">
             <div className="g8-spec-table">
@@ -104,23 +112,38 @@ export default function G8Showcase() {
           </div>
         </section>
 
-        {/* ── NUMBERS BAR ── */}
+        {/* ── TECH STACK BAR ── */}
         <div className="g8-numbers-bar g8-reveal">
-          <div className="g8-number-cell">
-            <div className="g8-number-value">4</div>
-            <div className="g8-number-label">Core Features</div>
+          <div className="g8-number-cell g8-number-cell--tech">
+            <div className="g8-number-value">MSSQL</div>
+            <div className="g8-number-label">Database</div>
           </div>
-          <div className="g8-number-cell">
-            <div className="g8-number-value">3</div>
-            <div className="g8-number-label">MVC Layers</div>
+          <div className="g8-number-cell g8-number-cell--tech">
+            <div className="g8-number-value">ASP.NET</div>
+            <div className="g8-number-label">Backend</div>
           </div>
-          <div className="g8-number-cell">
-            <div className="g8-number-value">3</div>
-            <div className="g8-number-label">API Controllers</div>
+          <div className="g8-number-cell g8-number-cell--tech">
+            <div className="g8-number-value">Next.js</div>
+            <div className="g8-number-label">Frontend</div>
           </div>
-          <div className="g8-number-cell">
-            <div className="g8-number-value">8+</div>
-            <div className="g8-number-label">Components</div>
+          <div className="g8-number-cell g8-number-cell--tech">
+            <div className="g8-number-value">C#</div>
+            <div className="g8-number-label">Language</div>
+          </div>
+        </div>
+
+        {/* ── DEMO ── */}
+        <div className="g8-demo-section g8-reveal">
+          <div className="g8-demo-inner">
+            <div className="g8-demo-label">Demo Video</div>
+            <div className="g8-demo-video">
+              <iframe
+                src="https://www.loom.com/embed/1a65551334914ad595ce378c586fbaa8"
+                title="G8 demo"
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
 

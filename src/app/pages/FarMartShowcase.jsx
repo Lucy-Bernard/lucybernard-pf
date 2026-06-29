@@ -27,7 +27,7 @@ export default function FarMartShowcase() {
             ← Portfolio
           </Link>
           <span className="topbar-right">
-            FarMarT · University of Nebraska–Lincoln · v6.0
+            FarMarT · University of Nebraska–Lincoln
           </span>
         </nav>
 
@@ -43,7 +43,7 @@ export default function FarMartShowcase() {
             <h1 className="hero-title flex">
               FarMar<span style={{ color: "var(--sage-dim)" }}>T</span>
             </h1>
-            <p className="hero-subtitle">Sales System Design — Version 6.0</p>
+            <p className="hero-subtitle">Sales System Design</p>
             <p className="hero-desc">
               A database-backed sales subsystem for a regional farm equipment
               chain, built on Object-Oriented Programming and RDBMS principles.
@@ -133,27 +133,19 @@ export default function FarMartShowcase() {
           </div>
         </section>
 
-        {/* Stats bar */}
+        {/* Tech stack bar */}
         <div className="stats-bar reveal">
           <div className="stat-cell">
-            <div className="stat-value">6</div>
-            <div className="stat-label">Dev Phases</div>
+            <div className="stat-value">Java</div>
+            <div className="stat-label">Language</div>
           </div>
           <div className="stat-cell">
-            <div className="stat-value">3NF</div>
-            <div className="stat-label">DB Normal Form</div>
+            <div className="stat-value">JDBC</div>
+            <div className="stat-label">DB Connectivity</div>
           </div>
           <div className="stat-cell">
-            <div className="stat-value">17+</div>
-            <div className="stat-label">Java Classes</div>
-          </div>
-          <div className="stat-cell">
-            <div className="stat-value">3</div>
-            <div className="stat-label">Report Types</div>
-          </div>
-          <div className="stat-cell">
-            <div className="stat-value">v6.0</div>
-            <div className="stat-label">Final Version</div>
+            <div className="stat-value">OOP</div>
+            <div className="stat-label">Design Principles</div>
           </div>
         </div>
 
@@ -852,7 +844,7 @@ export default function FarMartShowcase() {
         <footer>
           <div className="footer-name">Lucy Bernard</div>
           <div className="footer-meta">
-            FarMarT · UNL CS&amp;E · Java · MySQL · v6.0 · 2023
+            FarMarT · UNL CS&amp;E · Java · MySQL · 2023
           </div>
         </footer>
       </div>

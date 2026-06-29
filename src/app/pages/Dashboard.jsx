@@ -1,25 +1,26 @@
 import { Link } from "react-router";
 import profileImage from "../../assets/lucy.png";
+import { skills } from "../data/skills";
 
 export default function Dashboard() {
   const featuredProjects = [
     {
+      id: "commonground",
+      index: "01 — Full-Stack / Web App",
+      title: "Common Ground",
+      subtitle: "Chicago dance studio directory",
+      description:
+        "A curated directory of adult dance studios in Chicago with live class schedules scraped daily via Puppeteer, anonymous reviews, and filters that actually help you find a class.",
+      tags: ["React", "Express.js", "PostgreSQL", "Puppeteer"],
+    },
+    {
       id: "plantid",
-      index: "01 — AI / Full-Stack",
+      index: "02 — AI / Full-Stack",
       title: "LeafLine",
       subtitle: "Autonomous plant diagnostic app",
       description:
-        "An AI-powered plant health platform built around a self-generating Diagnostic Kernel — an autonomous agent that cyclically produces Python code within a sandboxed environment.",
+        "An AI-powered plant health platform with an autonomous Diagnostic Kernel that generates and executes Python code within a sandboxed environment to diagnose plant health.",
       tags: ["Python", "FastAPI", "Next.js", "AI Agent"],
-    },
-    {
-      id: "g8",
-      index: "02 — Full-Stack / E-Commerce",
-      title: "G8",
-      subtitle: "E-commerce platform",
-      description:
-        "A full-stack e-commerce application built with C#, ASP.NET, and React following strict MVC architecture. Features cart management, user authentication, and checkout.",
-      tags: ["C#", "ASP.NET", "React", "Docker"],
     },
   ];
 
@@ -52,65 +53,25 @@ export default function Dashboard() {
       <section className="dashboard-skills">
         <div className="dashboard-skills-inner">
           <div className="dashboard-skills-container">
-            <div className="dashboard-skills-group">
-              <div className="dashboard-skills-heading">
-                <em>Frontend</em>
-              </div>
-              <div className="dashboard-skills-chips">
-                {[
-                  "React",
-                  "Next.js",
-                  "Angular",
-                  "TypeScript",
-                  "JavaScript",
-                  "Tailwind CSS",
-                ].map((skill) => (
-                  <span key={skill} className="dashboard-skill-chip">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="dashboard-skills-group">
-              <div className="dashboard-skills-heading">
-                <em>Backend</em>
-              </div>
-              <div className="dashboard-skills-chips">
-                {["Python", "FastAPI", "C#", "ASP.NET", "Node.js", "Java"].map(
-                  (skill) => (
+            {[
+              { label: "Frontend", key: "frontend" },
+              { label: "Backend", key: "backend" },
+              { label: "Data", key: "data" },
+              { label: "Tools", key: "tools" },
+            ].map(({ label, key }) => (
+              <div key={key} className="dashboard-skills-group">
+                <div className="dashboard-skills-heading">
+                  <em>{label}</em>
+                </div>
+                <div className="dashboard-skills-chips">
+                  {skills[key].map((skill) => (
                     <span key={skill} className="dashboard-skill-chip">
                       {skill}
                     </span>
-                  ),
-                )}
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="dashboard-skills-group">
-              <div className="dashboard-skills-heading">
-                <em>Data</em>
-              </div>
-              <div className="dashboard-skills-chips">
-                {["PostgreSQL", "SQL", "T-SQL", "REST APIs"].map((skill) => (
-                  <span key={skill} className="dashboard-skill-chip">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="dashboard-skills-group">
-              <div className="dashboard-skills-heading">
-                <em>Tools</em>
-              </div>
-              <div className="dashboard-skills-chips">
-                {["Git", "Docker", "Azure DevOps", "Vercel", "CI/CD"].map(
-                  (skill) => (
-                    <span key={skill} className="dashboard-skill-chip">
-                      {skill}
-                    </span>
-                  ),
-                )}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

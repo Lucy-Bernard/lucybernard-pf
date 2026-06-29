@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useEffect } from "react";
+import ShowcaseTopbar from "../components/ShowcaseTopbar";
 export default function PlantIDShowcase() {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -17,12 +18,10 @@ export default function PlantIDShowcase() {
   }, []);
   return (
     <div className="plantid-showcase">
+      <ShowcaseTopbar label="LeafLine · AI / Full-Stack" />
       {/* Hero Section */}
       <section className="plantid-hero">
         <div className="plantid-hero-left">
-          <Link to="/projects" className="plantid-back-link">
-            Back to Portfolio
-          </Link>
           <div>
             <div className="plantid-hero-tag">Full-Stack Application</div>
             <h1 className="plantid-hero-title">
