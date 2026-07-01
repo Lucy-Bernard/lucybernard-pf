@@ -11,7 +11,7 @@ export default function Resume() {
             </h1>
           </div>
           <a
-            href="https://drive.google.com/uc?export=download&id=1Nr3aH6rG5itvIyDVLx-48TSyLdsjeZLI"
+            href="https://drive.google.com/uc?export=download&id=1N_wlemKnfaDjQL6B5yx6B8yUWScZJt-X"
             className="resume-download-btn"
           >
             <i className="fa-solid fa-download"></i>

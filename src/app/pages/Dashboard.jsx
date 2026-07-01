@@ -30,7 +30,7 @@ export default function Dashboard() {
       <section className="dashboard-hero">
         <div className="dashboard-hero-content">
           <div className="dashboard-hero-text">
-            <div className="dashboard-hero-subtitle">Software Engineer</div>
+            <div className="dashboard-hero-subtitle">UI Enthusiast</div>
             <h1>
               Hel <em>lo.</em>
             </h1>

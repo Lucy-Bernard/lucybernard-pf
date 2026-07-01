@@ -348,13 +348,9 @@ export default function CommonGroundShowcase() {
       {/* CTA */}
       <section className="cg-cta-section cg-reveal">
         <h2 className="cg-cta-title">
-          Follow the<br />
-          <em>build</em>
+          View the<br />
+          <em>Code</em>
         </h2>
-        <p className="cg-cta-desc">
-          The repo is public. The app is live but still private for now. Come see what's being
-          built for the Chicago dance community.
-        </p>
         <div className="cg-cta-buttons">
           <a
             href="https://github.com/Common-Ground-Co/common-ground"
